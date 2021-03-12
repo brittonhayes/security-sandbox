@@ -1,0 +1,3 @@
+*.vmx
+*.env
+*.vagrant
