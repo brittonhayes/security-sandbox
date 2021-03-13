@@ -15,4 +15,4 @@
 
 ## [Javascript](./javascript)
 
-> All of your python projects or scripts
+> All of your javasscript projects or scripts
