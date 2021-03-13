@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BASE_DIR="~/Desktop/code"
+BASE_DIR="~/Desktop/"
 
 echo "Starting bootstrap..."
 
@@ -35,16 +35,16 @@ sudo apt-get install -y tldr
 
 echo "Setting up directory structure for development"
 # Create code environment
-mkdir -p "$BASE_DIR"/workspace
-mkdir -p "$BASE_DIR"/scripts
-mkdir -p "$BASE_DIR"/golang
-mkdir -p "$BASE_DIR"/python
-mkdir -p "$BASE_DIR"/javascript
+mkdir -p "$BASE_DIR"/code/workspace
+mkdir -p "$BASE_DIR"/code/scripts
+mkdir -p "$BASE_DIR"/code/golang
+mkdir -p "$BASE_DIR"/code/python
+mkdir -p "$BASE_DIR"/code/javascript
 
 echo "Setting up directory structure for CTFs"
 # Create ctf environment
-mkdir -p "$BASE_DIR"/loot
-mkdir -p "$BASE_DIR"/notes
-mkdir -p "$BASE_DIR"/workspace
+mkdir -p "$BASE_DIR"/ctf/loot
+mkdir -p "$BASE_DIR"/ctf/notes
+mkdir -p "$BASE_DIR"/ctf/workspace
 
 echo "All done! You may need to run this script a second time after logging out and in to complete setup."
