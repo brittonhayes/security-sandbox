@@ -45,6 +45,21 @@ vagrant up metasploitable
 #  Navigate to http://192.168.33.30
 ```
 
+## Collaborate Online
+
+If you'd like to collaborate with others on any of the vulnerable web applications, you can use [vagrant share](https://www.vagrantup.com/docs/share)
+right in the command line. This will create a URL that you can give to anyone and will route directly into your chosen Vagrant environment.
+
+This utilizes a service called [ngrok](https://ngrok.com). For more information, visit ngrok's documentation.
+
+```shell
+# Install the plugin
+vagrant plugin install vagrant-share
+
+# Share your environment
+vagrant share
+```
+
 ## References
 
 [OWASP Juiceshop](https://owasp.org/www-project-juice-shop/)
