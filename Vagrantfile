@@ -17,8 +17,6 @@ Vagrant.configure("2") do |config|
         tldr \
         httpie
 
-    go get github.com/spf13/cobra/cobra
-    go get github.com/brittonhayes/pillager
     SCRIPT
 
     # Setup directory structure

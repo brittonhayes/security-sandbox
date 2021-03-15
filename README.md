@@ -16,6 +16,18 @@ my preferred directory structure and workspace environment.
 vagrant up
 ```
 
+### Help
+
+To view the available helper commands use `make help`.
+
+```shell
+❯ make help
+Usage:
+kali            Build the Kali box
+sandbox         Build the whole sandbox
+teardown        Tear down the sandbox
+```
+
 ## Red Team Lab Environment (Optional)
 
 This virtual environment comes with a few testing labs available. Pick your flavor!
