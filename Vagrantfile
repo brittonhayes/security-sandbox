@@ -22,6 +22,7 @@ Vagrant.configure("2") do |config|
     # Setup directory structure
     kali.vm.provision "file", source: "data/code", destination: "$HOME/code"
     kali.vm.provision "file", source: "data/ctf", destination: "$HOME/ctf"
+    kali.vm.post_up_message = "Welcome to Kali Linux by Offensive Security. Enjoy your stay."
   end
   
   # JUICESHOP
