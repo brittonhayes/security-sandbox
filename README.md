@@ -22,6 +22,9 @@ Set up the Vagrant box and bootstrap it with
 my preferred directory structure and workspace environment.
 
 ```shell
+# Clone the repository with the Github CLI
+gh repo clone brittonhayes/security-sandbox
+
 # Start up the primary Kali machine
 vagrant up
 ```
