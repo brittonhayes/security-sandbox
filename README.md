@@ -4,6 +4,8 @@
 > security tools, vulnerable applications, and using in CTFs.
 > Feel free to use this for your own studying or enjoyment!
 
+![Security Sandbox Logo](./images/security-sandbox.png)
+
 ## Usage
 
 Set up the Vagrant box and bootstrap it with
@@ -42,7 +44,7 @@ vagrant up dvwa
 # Start up Metasploitable
 vagrant up metasploitable
 
-#  Navigate to http://192.168.33.30
+# Navigate to http://192.168.33.30
 ```
 
 ## Collaborate Online
