@@ -27,6 +27,10 @@ gh repo clone brittonhayes/security-sandbox
 
 # Start up the primary Kali machine
 vagrant up
+
+# The login is
+username: vagrant
+password: vagrant
 ```
 
 ### Help
