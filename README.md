@@ -1,4 +1,4 @@
-# Kali Security Sandbox
+# Security Sandbox
 
 > My personal sandbox environment for testing out new
 > security tools, vulnerable applications, and using in CTFs.
