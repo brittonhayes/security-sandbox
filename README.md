@@ -6,6 +6,16 @@
 
 ![Security Sandbox Logo](./images/security-sandbox.png)
 
+## Requirements
+
+There are only two requirements to
+get up and running:
+
+- [Virtual Box](https://www.virtualbox.org/) or [VMWare Workstation](https://www.vmware.com/products/workstation-player/workstation-player-evaluation.html)
+- [Hashicorp Vagrant](https://www.vagrantup.com/downloads)
+
+Once you've got a virtualization solution setup as well as Hashicorp Vagrant, you're ready to go.
+
 ## Usage
 
 Set up the Vagrant box and bootstrap it with
