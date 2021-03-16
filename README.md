@@ -1,4 +1,4 @@
-# Security Sandbox
+# Security Sandbox 🏖️
 
 > My personal sandbox environment for testing out new
 > security tools, vulnerable applications, and using in CTFs.
@@ -16,7 +16,7 @@ get up and running:
 
 Once you've got a virtualization solution setup as well as Hashicorp Vagrant, you're ready to go.
 
-## Usage
+## Usage ⚡
 
 Set up the Vagrant box and bootstrap it with
 my preferred directory structure and workspace environment.
@@ -41,9 +41,10 @@ sandbox         Build the whole sandbox
 teardown        Tear down the sandbox
 ```
 
-## Red Team Lab Environment (Optional)
+## Red Team Lab Environment (Optional) 🟥
 
-This virtual environment comes with a few testing labs available. Pick your flavor!
+This virtual environment comes with a few testing labs available. 
+Pick your flavor!
 
 ### Juiceshop
 
@@ -51,7 +52,7 @@ This virtual environment comes with a few testing labs available. Pick your flav
 # Start up juiceshop
 vagrant up juiceshop
 
-# Navigate to http://192.168.33.10
+# Navigate to http://192.168.33.20
 ```
 
 ### Damn Vulnerable Web Application
@@ -60,7 +61,7 @@ vagrant up juiceshop
 # Start up DVWA
 vagrant up dvwa
 
-# Navigate to http://192.168.33.20
+# Navigate to http://192.168.33.30
 ```
 
 ### Metasploitable
@@ -69,8 +70,16 @@ vagrant up dvwa
 # Start up Metasploitable
 vagrant up metasploitable
 
-# Navigate to http://192.168.33.30
+# Navigate to http://192.168.33.40
 ```
+
+## Blue Team Environment (Optional) 🟦
+
+If you're looking for a good blue team environment to pair with this sandbox, I recommend a [Detection Lab](https://detectionlab.network/) deployment. 
+
+Setup instructions can be found here:
+[Detection Lab Deployment Instructions](https://detectionlab.network/deployment/)
+
 
 ## Collaborate Online
 
@@ -86,6 +95,8 @@ vagrant plugin install vagrant-share
 # Share your environment
 vagrant share
 ```
+
+---
 
 ## References
 
