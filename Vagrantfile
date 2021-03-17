@@ -18,7 +18,8 @@ Vagrant.configure("2") do |config|
     sudo apt-get install -y \
         golang-go \
         tldr \
-        httpie
+        httpie \
+        jq
     tldr -u
 
     SCRIPT
