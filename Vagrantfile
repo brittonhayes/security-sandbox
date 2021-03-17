@@ -3,12 +3,14 @@
 
 Vagrant.configure("2") do |config|
 
+  config.vm.provider "virtualbox" do |v|
+	v.memory = 4096
+  end
+
   # Kali Box
   config.vm.define "kali", primary: true do |kali|
     kali.vm.box = "kalilinux/rolling"
     kali.vm.hostname = "kali.local"
-    kali.vm.memory = 4096
-
     # Provision
     kali.vm.provision "shell", inline: <<-SCRIPT
     sudo add-apt-repository ppa:longsleep/golang-backports
