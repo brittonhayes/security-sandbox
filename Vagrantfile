@@ -19,6 +19,7 @@ Vagrant.configure("2") do |config|
         golang-go \
         tldr \
         httpie
+    tldr -u
 
     SCRIPT
 
