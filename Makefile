@@ -23,3 +23,5 @@ teardown: ## Tear down the sandbox
 	vagrant halt dvwa
 	vagrant halt metasploitable
 
+destroy: ## Destroy the sandbox
+	vagrant destroy

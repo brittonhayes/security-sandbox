@@ -43,6 +43,7 @@ Usage:
 kali            Build the Kali box
 sandbox         Build the whole sandbox
 teardown        Tear down the sandbox
+destroy         Destroy the sandbox
 ```
 
 ## Red Team Lab Environment (Optional) 🟥

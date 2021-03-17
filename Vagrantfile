@@ -7,6 +7,7 @@ Vagrant.configure("2") do |config|
   config.vm.define "kali", primary: true do |kali|
     kali.vm.box = "kalilinux/rolling"
     kali.vm.hostname = "kali.local"
+    kali.vm.memory = 4096
 
     # Provision
     kali.vm.provision "shell", inline: <<-SCRIPT
@@ -22,6 +23,7 @@ Vagrant.configure("2") do |config|
     # Setup directory structure
     kali.vm.provision "file", source: "data/code", destination: "$HOME/code"
     kali.vm.provision "file", source: "data/ctf", destination: "$HOME/ctf"
+
     kali.vm.post_up_message = "Welcome to Kali Linux by Offensive Security. Enjoy your stay."
   end
   
