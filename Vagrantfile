@@ -2,37 +2,46 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-
-  config.vm.provider "virtualbox" do |v|
-	v.memory = 4096
-  end
-
   # Kali Box
   config.vm.define "kali", primary: true do |kali|
+  	kali.vm.provider "virtualbox" do |v|
+  		v.name = "kali"
+		v.memory = 4096
+		v.cpus = 2
+  	end
+
     kali.vm.box = "kalilinux/rolling"
     kali.vm.hostname = "kali.local"
-    # Provision
-    kali.vm.provision "shell", inline: <<-SCRIPT
-    sudo add-apt-repository ppa:longsleep/golang-backports
-    sudo apt-get update
-    sudo apt-get install -y \
-        golang-go \
-        tldr \
-        httpie \
-        jq
-    tldr -u
-
-    SCRIPT
+    
+    # Install tools
+    kali.vm.provision "shell" do |s|
+      s.inline = "sudo apt-get install -y $1"
+      s.args = "golang-go tldr httpie jq yq tor"
+    end
+    
+    # Start services
+    kali.vm.provision "shell", type: "shell", run: "always" do |s|
+      s.inline = "systemctl start tor"
+    end
 
     # Setup directory structure
     kali.vm.provision "file", source: "data/code", destination: "$HOME/code"
     kali.vm.provision "file", source: "data/ctf", destination: "$HOME/ctf"
+    kali.trigger.after :up do |trigger|
+      trigger.info = "Updating tldr"
+      trigger.run = { inline: "tldr -u" }
+    end
 
     kali.vm.post_up_message = "Welcome to Kali Linux by Offensive Security. Enjoy your stay."
   end
   
   # JUICESHOP
   config.vm.define "juiceshop", autostart: false do |juiceshop|
+  	juiceshop.vm.provider "virtualbox" do |v|
+  		v.name = "juiceshop"
+		v.memory = 2048
+  	end
+  
     juiceshop.vm.box = "ubuntu/xenial64"
     juiceshop.vm.hostname = "juice.sh"
     juiceshop.vm.network "private_network", ip: "192.168.33.20"
@@ -44,6 +53,11 @@ Vagrant.configure("2") do |config|
 
   # DAMN VULNERABLE WEB APP
   config.vm.define "dvwa", autostart: false do |dvwa|
+  	dvwa.vm.provider "virtualbox" do |v|
+  		v.name = "dvwa"
+		v.memory = 2048
+  	end
+
     dvwa.vm.box = "ubuntu/xenial64"
     dvwa.vm.hostname = "dvwa.local"
     dvwa.vm.network "private_network", ip: "192.168.33.30"
@@ -57,6 +71,11 @@ Vagrant.configure("2") do |config|
 
   # METASPLOITABLE
   config.vm.define "metasploitable", autostart: false do |metasploitable|
+  	metasploitable.vm.provider "virtualbox" do |v|
+  		v.name = "metasploitable"
+		v.memory = 4096
+  	end
+  	
     metasploitable.vm.box = "ubuntu/xenial64"
     metasploitable.vm.hostname = "metasploitable.local"
     metasploitable.vm.network "private_network", ip: "192.168.33.40"

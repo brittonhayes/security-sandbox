@@ -51,6 +51,19 @@ destroy         Destroy the sandbox
 This virtual environment comes with a few testing labs available. 
 Pick your flavor!
 
+### Kali
+
+The kali box comes with tor and proxychains setup on boot, so feel free to chain requests through there first.
+
+```shell
+# Check tor service
+systemctl status tor
+
+# Run a port scan against scanme.nmap.org
+# through a tor proxy 
+proxychains nmap -sT -Pn scanme.nmap.org 
+```
+
 ### Juiceshop
 
 ```shell
